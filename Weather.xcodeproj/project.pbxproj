@@ -48,6 +48,13 @@
 		0F2A702827FC5BA100887966 /* MeasurementUnitSettingsUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A702727FC5BA100887966 /* MeasurementUnitSettingsUseCaseImp.swift */; };
 		0F2A702B27FC611D00887966 /* MeasurementUnitDisplayUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A702A27FC611D00887966 /* MeasurementUnitDisplayUseCase.swift */; };
 		0F2A702D27FC61FE00887966 /* MeasurementUnitDisplayUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A702C27FC61FE00887966 /* MeasurementUnitDisplayUseCaseImp.swift */; };
+		0F2A702F27FC6BF200887966 /* TimeStampDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A702E27FC6BF200887966 /* TimeStampDataViewModel.swift */; };
+		0F2A703127FC726800887966 /* WeatherIconsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A703027FC726800887966 /* WeatherIconsUseCase.swift */; };
+		0F2A703327FC736B00887966 /* WeatherIconsUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A703227FC736B00887966 /* WeatherIconsUseCaseImp.swift */; };
+		0F2A703527FC769000887966 /* TimeStampDataListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A703427FC769000887966 /* TimeStampDataListViewModel.swift */; };
+		0F2A703727FC785900887966 /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A703627FC785900887966 /* ForecastDay.swift */; };
+		0F2A703927FC797A00887966 /* ForecastDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A703827FC797A00887966 /* ForecastDayViewModel.swift */; };
+		0F2A703B27FC7C1A00887966 /* ForecastDayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A703A27FC7C1A00887966 /* ForecastDayListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +120,13 @@
 		0F2A702727FC5BA100887966 /* MeasurementUnitSettingsUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementUnitSettingsUseCaseImp.swift; sourceTree = "<group>"; };
 		0F2A702A27FC611D00887966 /* MeasurementUnitDisplayUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementUnitDisplayUseCase.swift; sourceTree = "<group>"; };
 		0F2A702C27FC61FE00887966 /* MeasurementUnitDisplayUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementUnitDisplayUseCaseImp.swift; sourceTree = "<group>"; };
+		0F2A702E27FC6BF200887966 /* TimeStampDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStampDataViewModel.swift; sourceTree = "<group>"; };
+		0F2A703027FC726800887966 /* WeatherIconsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconsUseCase.swift; sourceTree = "<group>"; };
+		0F2A703227FC736B00887966 /* WeatherIconsUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconsUseCaseImp.swift; sourceTree = "<group>"; };
+		0F2A703427FC769000887966 /* TimeStampDataListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStampDataListViewModel.swift; sourceTree = "<group>"; };
+		0F2A703627FC785900887966 /* ForecastDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
+		0F2A703827FC797A00887966 /* ForecastDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDayViewModel.swift; sourceTree = "<group>"; };
+		0F2A703A27FC7C1A00887966 /* ForecastDayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDayListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +254,7 @@
 				0F2A701127FC40BF00887966 /* TimeStampData.swift */,
 				0F2A701327FC40DB00887966 /* Rain.swift */,
 				0F2A701527FC410B00887966 /* City.swift */,
+				0F2A703627FC785900887966 /* ForecastDay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +287,7 @@
 				0F2A701B27FC488B00887966 /* ForecastUseCaseImp.swift */,
 				0F2A702727FC5BA100887966 /* MeasurementUnitSettingsUseCaseImp.swift */,
 				0F2A702C27FC61FE00887966 /* MeasurementUnitDisplayUseCaseImp.swift */,
+				0F2A703227FC736B00887966 /* WeatherIconsUseCaseImp.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -283,6 +299,7 @@
 				0F2A6FFF27FC398700887966 /* CurrentWeatherUseCase.swift */,
 				0F2A701727FC413300887966 /* ForecastUseCase.swift */,
 				0F2A702A27FC611D00887966 /* MeasurementUnitDisplayUseCase.swift */,
+				0F2A703027FC726800887966 /* WeatherIconsUseCase.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -299,6 +316,10 @@
 			isa = PBXGroup;
 			children = (
 				0F2A702127FC4D7700887966 /* CurrentWeatherViewModel.swift */,
+				0F2A702E27FC6BF200887966 /* TimeStampDataViewModel.swift */,
+				0F2A703427FC769000887966 /* TimeStampDataListViewModel.swift */,
+				0F2A703827FC797A00887966 /* ForecastDayViewModel.swift */,
+				0F2A703A27FC7C1A00887966 /* ForecastDayListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -448,9 +469,11 @@
 				0F2A701A27FC461A00887966 /* CurrentWeatherUseCaseImp.swift in Sources */,
 				0F2A700227FC3A5800887966 /* CurrentWeather.swift in Sources */,
 				0F2A6FE727FC365200887966 /* DeviceNetworkMonitor.swift in Sources */,
+				0F2A703B27FC7C1A00887966 /* ForecastDayListViewModel.swift in Sources */,
 				0F2A700027FC398700887966 /* CurrentWeatherUseCase.swift in Sources */,
 				0F2A6FF127FC379300887966 /* OpenWeatherApiService.swift in Sources */,
 				0F2A702D27FC61FE00887966 /* MeasurementUnitDisplayUseCaseImp.swift in Sources */,
+				0F2A703727FC785900887966 /* ForecastDay.swift in Sources */,
 				0F2A701627FC410B00887966 /* City.swift in Sources */,
 				0F2A6FE927FC366F00887966 /* DebuggingLogger.swift in Sources */,
 				0F2A702627FC5B2700887966 /* MeasurementUnitSettingsUseCase.swift in Sources */,
@@ -472,11 +495,16 @@
 				0F2A700827FC3B8B00887966 /* Wind.swift in Sources */,
 				0F2A6FEE27FC370700887966 /* ColorUtils.swift in Sources */,
 				0F2A6FB727FC2D4F00887966 /* ViewController.swift in Sources */,
+				0F2A703927FC797A00887966 /* ForecastDayViewModel.swift in Sources */,
+				0F2A703127FC726800887966 /* WeatherIconsUseCase.swift in Sources */,
 				0F2A6FEC27FC369E00887966 /* Constants.swift in Sources */,
+				0F2A703327FC736B00887966 /* WeatherIconsUseCaseImp.swift in Sources */,
 				0F2A702827FC5BA100887966 /* MeasurementUnitSettingsUseCaseImp.swift in Sources */,
 				0F2A6FF927FC380700887966 /* APICallError.swift in Sources */,
+				0F2A702F27FC6BF200887966 /* TimeStampDataViewModel.swift in Sources */,
 				0F2A6FB327FC2D4F00887966 /* AppDelegate.swift in Sources */,
 				0F2A6FB527FC2D4F00887966 /* SceneDelegate.swift in Sources */,
+				0F2A703527FC769000887966 /* TimeStampDataListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
