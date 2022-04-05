@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MeasurementUnitDisplayUseCase {
-    func getTemperatureUnitDisplayText(measurementUnit: MeasurementUnit)
+    func getTemperatureUnitDisplayText(measurementUnit: MeasurementUnit) -> String 
 }
 
 

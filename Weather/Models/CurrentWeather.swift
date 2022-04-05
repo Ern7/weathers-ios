@@ -13,12 +13,12 @@ struct CurrentWeather: Codable {
     let weather: [Weather]
     let base: String
     let main: Main
-    let visibility: Int
+    let visibility: Int?
     let wind: Wind
     let clouds: Clouds
-    let dt: Int
+    let dt: Int64?
     let sys: Sys
-    let timezone, id: Int
+    let timezone, id: Int64
     let name: String
-    let cod: Int
+    let cod: Int?
 }

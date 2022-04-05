@@ -8,14 +8,14 @@
 import Foundation
 
 struct TimeStampData: Codable {
-    let dt: Int
+    let dt: Int64
     let main: Main
     let weather: [Weather]
     let clouds: Clouds
     let wind: Wind
     let visibility: Int?
     let pop: Double?
-    let sys: Sys
+    let sys: TimeStampSys
     let dtTxt: String
     let rain: Rain?
 
@@ -24,4 +24,8 @@ struct TimeStampData: Codable {
         case dtTxt = "dt_txt"
         case rain
     }
+}
+
+struct TimeStampSys: Codable {
+    let pod: String?
 }

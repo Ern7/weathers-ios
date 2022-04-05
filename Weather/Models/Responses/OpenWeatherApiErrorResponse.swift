@@ -8,5 +8,6 @@
 import Foundation
 
 struct OpenWeatherApiErrorResponse : Codable {
-    let cod, message: String
+    let cod : Int
+    let message: String
 }

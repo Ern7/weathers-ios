@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0F2A6FB327FC2D4F00887966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A6FB227FC2D4F00887966 /* AppDelegate.swift */; };
 		0F2A6FB527FC2D4F00887966 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A6FB427FC2D4F00887966 /* SceneDelegate.swift */; };
-		0F2A6FB727FC2D4F00887966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A6FB627FC2D4F00887966 /* ViewController.swift */; };
 		0F2A6FBA27FC2D4F00887966 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A6FB827FC2D4F00887966 /* Main.storyboard */; };
 		0F2A6FBD27FC2D4F00887966 /* Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A6FBB27FC2D4F00887966 /* Weather.xcdatamodeld */; };
 		0F2A6FBF27FC2D5000887966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A6FBE27FC2D5000887966 /* Assets.xcassets */; };
@@ -55,6 +54,13 @@
 		0F2A703727FC785900887966 /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A703627FC785900887966 /* ForecastDay.swift */; };
 		0F2A703927FC797A00887966 /* ForecastDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A703827FC797A00887966 /* ForecastDayViewModel.swift */; };
 		0F2A703B27FC7C1A00887966 /* ForecastDayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A703A27FC7C1A00887966 /* ForecastDayListViewModel.swift */; };
+		0F2A704327FC852500887966 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A704127FC851700887966 /* Montserrat-Bold.ttf */; };
+		0F2A704427FC852A00887966 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A703F27FC851700887966 /* Montserrat-Thin.ttf */; };
+		0F2A704527FC852A00887966 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A704027FC851700887966 /* Montserrat-Regular.ttf */; };
+		0F2A704627FC852A00887966 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A703E27FC851700887966 /* Montserrat-Medium.ttf */; };
+		0F2A704727FC852A00887966 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A704227FC851800887966 /* Montserrat-SemiBold.ttf */; };
+		0F2A704A27FC858400887966 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A704927FC858400887966 /* HomeViewController.swift */; };
+		0F2A704C27FCA4DC00887966 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A704B27FCA4DC00887966 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +84,6 @@
 		0F2A6FAF27FC2D4F00887966 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F2A6FB227FC2D4F00887966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F2A6FB427FC2D4F00887966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0F2A6FB627FC2D4F00887966 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0F2A6FB927FC2D4F00887966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F2A6FBC27FC2D4F00887966 /* Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weather.xcdatamodel; sourceTree = "<group>"; };
 		0F2A6FBE27FC2D5000887966 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +132,13 @@
 		0F2A703627FC785900887966 /* ForecastDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
 		0F2A703827FC797A00887966 /* ForecastDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDayViewModel.swift; sourceTree = "<group>"; };
 		0F2A703A27FC7C1A00887966 /* ForecastDayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDayListViewModel.swift; sourceTree = "<group>"; };
+		0F2A703E27FC851700887966 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		0F2A703F27FC851700887966 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		0F2A704027FC851700887966 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		0F2A704127FC851700887966 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		0F2A704227FC851800887966 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		0F2A704927FC858400887966 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0F2A704B27FCA4DC00887966 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +189,8 @@
 		0F2A6FB127FC2D4F00887966 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				0F2A704827FC856C00887966 /* View Controllers */,
+				0F2A703C27FC83FC00887966 /* Assets */,
 				0F2A702027FC4D5900887966 /* View Models */,
 				0F2A6FFD27FC391B00887966 /* Usecases */,
 				0F2A6FF227FC37B700887966 /* Models */,
@@ -185,9 +199,7 @@
 				0F2A6FE527FC35A500887966 /* Utils */,
 				0F2A6FB227FC2D4F00887966 /* AppDelegate.swift */,
 				0F2A6FB427FC2D4F00887966 /* SceneDelegate.swift */,
-				0F2A6FB627FC2D4F00887966 /* ViewController.swift */,
 				0F2A6FB827FC2D4F00887966 /* Main.storyboard */,
-				0F2A6FBE27FC2D5000887966 /* Assets.xcassets */,
 				0F2A6FC027FC2D5000887966 /* LaunchScreen.storyboard */,
 				0F2A6FC327FC2D5000887966 /* Info.plist */,
 				0F2A6FBB27FC2D4F00887966 /* Weather.xcdatamodeld */,
@@ -320,6 +332,7 @@
 				0F2A703427FC769000887966 /* TimeStampDataListViewModel.swift */,
 				0F2A703827FC797A00887966 /* ForecastDayViewModel.swift */,
 				0F2A703A27FC7C1A00887966 /* ForecastDayListViewModel.swift */,
+				0F2A704B27FCA4DC00887966 /* BaseViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -330,6 +343,35 @@
 				0F2A702527FC5B2700887966 /* MeasurementUnitSettingsUseCase.swift */,
 			);
 			path = "User Settings Protocols";
+			sourceTree = "<group>";
+		};
+		0F2A703C27FC83FC00887966 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A703D27FC84EE00887966 /* Fonts */,
+				0F2A6FBE27FC2D5000887966 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0F2A703D27FC84EE00887966 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A704127FC851700887966 /* Montserrat-Bold.ttf */,
+				0F2A703E27FC851700887966 /* Montserrat-Medium.ttf */,
+				0F2A704027FC851700887966 /* Montserrat-Regular.ttf */,
+				0F2A704227FC851800887966 /* Montserrat-SemiBold.ttf */,
+				0F2A703F27FC851700887966 /* Montserrat-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0F2A704827FC856C00887966 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A704927FC858400887966 /* HomeViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,8 +478,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2A704527FC852A00887966 /* Montserrat-Regular.ttf in Resources */,
+				0F2A704427FC852A00887966 /* Montserrat-Thin.ttf in Resources */,
+				0F2A704327FC852500887966 /* Montserrat-Bold.ttf in Resources */,
+				0F2A704627FC852A00887966 /* Montserrat-Medium.ttf in Resources */,
 				0F2A6FC227FC2D5000887966 /* LaunchScreen.storyboard in Resources */,
 				0F2A6FBF27FC2D5000887966 /* Assets.xcassets in Resources */,
+				0F2A704727FC852A00887966 /* Montserrat-SemiBold.ttf in Resources */,
 				0F2A6FBA27FC2D4F00887966 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +515,7 @@
 				0F2A700627FC3B4E00887966 /* Weather.swift in Sources */,
 				0F2A701A27FC461A00887966 /* CurrentWeatherUseCaseImp.swift in Sources */,
 				0F2A700227FC3A5800887966 /* CurrentWeather.swift in Sources */,
+				0F2A704C27FCA4DC00887966 /* BaseViewModel.swift in Sources */,
 				0F2A6FE727FC365200887966 /* DeviceNetworkMonitor.swift in Sources */,
 				0F2A703B27FC7C1A00887966 /* ForecastDayListViewModel.swift in Sources */,
 				0F2A700027FC398700887966 /* CurrentWeatherUseCase.swift in Sources */,
@@ -482,6 +530,7 @@
 				0F2A700E27FC3C7800887966 /* Sys.swift in Sources */,
 				0F2A700427FC3AE100887966 /* Coordinates.swift in Sources */,
 				0F2A702B27FC611D00887966 /* MeasurementUnitDisplayUseCase.swift in Sources */,
+				0F2A704A27FC858400887966 /* HomeViewController.swift in Sources */,
 				0F2A701C27FC488B00887966 /* ForecastUseCaseImp.swift in Sources */,
 				0F2A6FF727FC37EB00887966 /* HttpMethod.swift in Sources */,
 				0F2A700C27FC3BFF00887966 /* Main.swift in Sources */,
@@ -494,7 +543,6 @@
 				0F2A701827FC413300887966 /* ForecastUseCase.swift in Sources */,
 				0F2A700827FC3B8B00887966 /* Wind.swift in Sources */,
 				0F2A6FEE27FC370700887966 /* ColorUtils.swift in Sources */,
-				0F2A6FB727FC2D4F00887966 /* ViewController.swift in Sources */,
 				0F2A703927FC797A00887966 /* ForecastDayViewModel.swift in Sources */,
 				0F2A703127FC726800887966 /* WeatherIconsUseCase.swift in Sources */,
 				0F2A6FEC27FC369E00887966 /* Constants.swift in Sources */,

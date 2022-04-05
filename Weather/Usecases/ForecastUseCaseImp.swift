@@ -12,6 +12,8 @@ final class ForecastUseCaseImp {
     
     static let shared = ForecastUseCaseImp()
     
+    private let weatherIconsUseCase = WeatherIconsUseCaseImp.shared
+    
     private func getForecastWebResource(latitude: Double, longitude: Double, measurementUnit: MeasurementUnit = MeasurementUnit.metric) -> WebResource<ForecastResponse> {
         
         guard let url = URL(string: "\(Constants.AppConfig.BackendUrl)\(OpenWeatherApiEndpoints.forecast.rawValue)?apiKey=\(Constants.ApiKeys.OpenWeatherApiKey)&lat=\(latitude)&lon=\(longitude)&units=\(measurementUnit.rawValue)") else {
@@ -36,6 +38,50 @@ extension ForecastUseCaseImp: ForecastUseCase {
                 }
             }
         }
+    }
+    
+    func convertToForecastDayList(timeStampDataList: [TimeStampData]) -> [ForecastDay] {
+        
+        let dateFormatter = DateFormatter()
+        var datesList = [String]()
+        var forecastDaysList = [ForecastDay]()
+        for timeStampData in timeStampDataList {
+            
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let date = dateFormatter.date(from:timeStampData.dtTxt)
+            
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let dateOnlyText = dateFormatter.string(from: date!)
+            
+            if !datesList.contains(dateOnlyText) {
+                datesList.append(dateOnlyText)
+                DebuggingLogger.printData("DateOnlyText \(dateOnlyText)")
+            }
+        }
+        
+        for dateText in datesList {
+            let dailyTimeStamps = timeStampDataList.filter {
+                $0.dtTxt.contains(dateText)
+            }
+            
+            var sum:Double = 0.0
+            var weatherId: Int = 0
+            for timeStamp in dailyTimeStamps {
+                if let temp = timeStamp.main.temp {
+                    sum = sum + temp
+                }
+            }
+            
+            if (dailyTimeStamps.count > 0 && dailyTimeStamps[0].weather.count > 0){
+                weatherId = dailyTimeStamps[0].weather[0].id
+            }
+            
+            let average_temperature = sum / Double(dailyTimeStamps.count)
+            let iconName = weatherIconsUseCase.getWeatherIconName(weatherId: weatherId)
+            forecastDaysList.append(ForecastDay(dateText: dateText, iconName: iconName, temperature: average_temperature))
+        }
+        
+        return forecastDaysList
     }
 
 }

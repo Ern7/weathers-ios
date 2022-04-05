@@ -9,9 +9,9 @@ import Foundation
 
 struct Main: Codable {
     let temp: Double?
-    let feelsLike: Int?
+    let feelsLike: Double?
     let tempMin, tempMax: Double?
-    let pressure, humidity, seaLevel, grndLevel: Int?
+    let pressure, humidity, seaLevel, grndLevel: Double?
     let tempKf: Double?
 
     enum CodingKeys: String, CodingKey {

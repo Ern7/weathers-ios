@@ -8,7 +8,7 @@
 import Foundation
 
 struct Sys: Codable {
-    let type, id: Int
+    let type, id: Int64?
     let country: String
-    let sunrise, sunset: Int
+    let sunrise, sunset: Int64?
 }

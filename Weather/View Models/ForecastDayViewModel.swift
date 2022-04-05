@@ -25,7 +25,7 @@ extension ForecastDayViewModel {
 extension ForecastDayViewModel {
     
     var day: String {
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let date = dateFormatter.date(from: self.forecastDay.dateText)
         
         dateFormatter.dateFormat = "EEEE"
