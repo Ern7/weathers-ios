@@ -43,6 +43,11 @@ extension ForecastUseCaseImp: ForecastUseCase {
         let dateFormatter = DateFormatter()
         var datesList = [String]()
         var forecastDaysList = [ForecastDay]()
+        
+        let dateNow = Date.now
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateNowOnlyText = dateFormatter.string(from: dateNow)
+        
         for timeStampData in timeStampDataList {
             
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -51,7 +56,7 @@ extension ForecastUseCaseImp: ForecastUseCase {
             dateFormatter.dateFormat = "yyyy-MM-dd"
             let dateOnlyText = dateFormatter.string(from: date!)
             
-            if !datesList.contains(dateOnlyText) {
+            if !datesList.contains(dateOnlyText) && dateNowOnlyText != dateOnlyText {
                 datesList.append(dateOnlyText)
                 DebuggingLogger.printData("DateOnlyText \(dateOnlyText)")
             }

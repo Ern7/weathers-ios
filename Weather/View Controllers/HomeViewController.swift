@@ -75,11 +75,11 @@ class HomeViewController: UIViewController {
     
     //MARK: DATA FETCH METHODS
     private func fetchCurrentWeather(){
-        currentWeatherViewModel?.fetchCurrentWeather(latitude: -25.8640, longitude: 28.0889)
+        currentWeatherViewModel?.fetchCurrentWeather(latitude: -25.9992, longitude: 28.0889)
     }
     
     private func fetchForecast(){
-        forecastDayListViewModel?.fetchForecast(latitude: -25.8640, longitude: 28.0889)
+        forecastDayListViewModel?.fetchForecast(latitude: -25.9992, longitude: 28.1263)
     }
 
     //MARK: - Activity Indicator methods
