@@ -12,8 +12,6 @@ final class ForecastUseCaseImp {
     
     static let shared = ForecastUseCaseImp()
     
-    private let weatherIconsUseCase = WeatherIconsUseCaseImp.shared
-    
     private func getForecastWebResource(latitude: Double, longitude: Double, measurementUnit: MeasurementUnit = MeasurementUnit.metric) -> WebResource<ForecastResponse> {
         
         guard let url = URL(string: "\(Constants.AppConfig.BackendUrl)\(OpenWeatherApiEndpoints.forecast.rawValue)?apiKey=\(Constants.ApiKeys.OpenWeatherApiKey)&lat=\(latitude)&lon=\(longitude)&units=\(measurementUnit.rawValue)") else {
@@ -77,8 +75,7 @@ extension ForecastUseCaseImp: ForecastUseCase {
             }
             
             let average_temperature = sum / Double(dailyTimeStamps.count)
-            let iconName = weatherIconsUseCase.getWeatherIconName(weatherId: weatherId)
-            forecastDaysList.append(ForecastDay(dateText: dateText, iconName: iconName, temperature: average_temperature))
+            forecastDaysList.append(ForecastDay(dateText: dateText, weatherId: weatherId, temperature: average_temperature))
         }
         
         return forecastDaysList

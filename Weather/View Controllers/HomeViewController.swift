@@ -9,13 +9,35 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    
+    //UI
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var headerBackgroundImageView: UIImageView!
+    @IBOutlet weak var headerMinTemperatureLabel: UILabel!
+    @IBOutlet weak var headerCurrentTemperatureLabel: UILabel!
+    @IBOutlet weak var headerMaxTemperatureLabel: UILabel!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: UILabel!
+    @IBOutlet weak var headerTemperatureLabel: UILabel!
+    
+    //VIEW MODELS
     var currentWeatherViewModel: CurrentWeatherViewModel?
     var forecastDayListViewModel: ForecastDayListViewModel?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeViewModels()
+        setupTableViewDelegatesAndDataSource()
         bindViewModels()
+        fetchCurrentWeather()
+    }
+    
+    // MARK: - VIEWMODEL METHODS
+    private func initializeViewModels(){
+        currentWeatherViewModel = CurrentWeatherViewModel()
+        forecastDayListViewModel = ForecastDayListViewModel()
     }
     
     private func bindViewModels(){
@@ -24,33 +46,34 @@ class HomeViewController: UIViewController {
     }
     
     private func bindCurrentWeatherViewModel(){
-        currentWeatherViewModel = CurrentWeatherViewModel()
         currentWeatherViewModel!.needsToUpdateViewWithNewData = { [weak self] in
-            DebuggingLogger.printData("HomeViewController fetchCurrentWeather finished \(self?.currentWeatherViewModel!.title)")
+            self?.fetchForecast()
+            self?.adaptHeaderView()
+            self?.updateTableViewBackgroundColor(hexColor: (self?.currentWeatherViewModel!.pageBackgroundColor)!)
         }
         currentWeatherViewModel!.needsToShowLoading = { [weak self] in
-            DebuggingLogger.printData("HomeViewController fetchCurrentWeather loading...")
+            self?.showLoader()
         }
         currentWeatherViewModel!.needsToShowError = { [weak self] error in
             DebuggingLogger.printData("HomeViewController fetchCurrentWeather error: \(error.message)")
         }
-        fetchCurrentWeather()
     }
     
     private func bindForecastDayListViewModel(){
-        forecastDayListViewModel = ForecastDayListViewModel()
         forecastDayListViewModel!.needsToUpdateViewWithNewData = { [weak self] in
-            DebuggingLogger.printData("HomeViewController fetchForecast finished \(self?.forecastDayListViewModel!.timeStampDataAtIndex(0).day)")
+            self?.tableView.reloadData()
+            self?.showTableView()
+            self?.hideLoader()
         }
         forecastDayListViewModel!.needsToShowLoading = { [weak self] in
-            DebuggingLogger.printData("HomeViewController fetchForecast loading...")
+            self?.showLoader()
         }
         forecastDayListViewModel!.needsToShowError = { [weak self] error in
             DebuggingLogger.printData("HomeViewController fetchForecast error: \(error.message)")
         }
-        fetchForecast()
     }
     
+    //MARK: DATA FETCH METHODS
     private func fetchCurrentWeather(){
         currentWeatherViewModel?.fetchCurrentWeather(latitude: -25.8640, longitude: 28.0889)
     }
@@ -60,11 +83,12 @@ class HomeViewController: UIViewController {
     }
 
     //MARK: - Activity Indicator methods
-/*    func showLoader() {
+    func showLoader() {
         DispatchQueue.main.async {
-            self.errorView.isHidden = true
+          //  self.errorView.isHidden = true
             self.activityIndicatorView.isHidden = false
             self.activityIndicatorView.startAnimating()
+            self.hideTableView()
         }
     }
     
@@ -73,6 +97,7 @@ class HomeViewController: UIViewController {
             self.activityIndicatorView.isHidden = true
             self.activityIndicatorView.stopAnimating()
         }
-    }   */
+    }
+    
 
 }

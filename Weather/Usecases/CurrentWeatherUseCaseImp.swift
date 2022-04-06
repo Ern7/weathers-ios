@@ -37,5 +37,43 @@ extension CurrentWeatherUseCaseImp: CurrentWeatherUseCase {
             }
         }
     }
+    
+    func getPageBackgroundColorHex(weatherId: Int) -> String {
+        if weatherId < 800 {
+            return Constants.AppPalette.rainyPageBackgroundGrey
+        }
+        else if weatherId == 800 {
+            return Constants.AppPalette.sunnyPageBackgroundGreen
+        }
+        else if weatherId >= 801  {
+            return Constants.AppPalette.cloudyPageBackgroundGrey
+        }
+        else {
+            return Constants.AppPalette.sunnyPageBackgroundGreen
+        }
+    }
+    
+    func getHeaderBackgroundImageName(weatherId: Int) -> String {
+        if weatherId < 800 {
+            return Constants.CurrentWeatherBackgroundImageNames.forestRainy
+        }
+        else if weatherId == 800 {
+            return Constants.CurrentWeatherBackgroundImageNames.forestSunny
+        }
+        else if weatherId >= 801  {
+            return Constants.CurrentWeatherBackgroundImageNames.forestCloudy
+        }
+        else {
+            return Constants.CurrentWeatherBackgroundImageNames.forestSunny
+        }
+    }
+    
+    func getHomeHeaderHeight(viewWidth: Double) -> Double {
+        //Header background images have the dimensions 360 × 321. We may need to update..
+        //...the constant in the formula below if the dimensions of the images are changed..
+        var height = viewWidth * (321 / 360)
+        height = height + 80 //offset
+        return height
+    }
 
 }

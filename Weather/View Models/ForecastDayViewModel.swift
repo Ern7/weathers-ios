@@ -14,6 +14,7 @@ struct ForecastDayViewModel {
     //UseCases
     private let measurementUnitSettingsUseCase = MeasurementUnitSettingsUseCaseImp.shared
     private let measurementUnitDisplayUseCase = MeasurementUnitDisplayUseCaseImp.shared
+    private let weatherIconsUseCase = WeatherIconsUseCaseImp.shared
 }
 
 extension ForecastDayViewModel {
@@ -34,14 +35,16 @@ extension ForecastDayViewModel {
     }
     
     var iconName: String {
-        return self.forecastDay.iconName
+        let iconName = self.weatherIconsUseCase.getWeatherIconName(weatherId: self.forecastDay.weatherId)
+        return iconName
     }
     
     var temperature: String {
         if let _temperature = self.forecastDay.temperature {
+            let temp = Int(round(_temperature))
             let savedUserMeasurementUnit = measurementUnitSettingsUseCase.get()
             let unit = measurementUnitDisplayUseCase.getTemperatureUnitDisplayText(measurementUnit: savedUserMeasurementUnit)
-            return "\(_temperature)\(unit))"
+            return "\(temp)\(unit)"
         }
         return "N/A"
     }

@@ -45,7 +45,10 @@ extension ForecastDayListViewModel {
     }
     
     func numberOfRowsInSection(_ section: Int) -> Int {
-        return self.forecastDaysList!.count
+        if let _forecastDaysList = self.forecastDaysList {
+            return _forecastDaysList.count
+        }
+        return 0
     }
     
     func timeStampDataAtIndex(_ index: Int) -> ForecastDayViewModel {

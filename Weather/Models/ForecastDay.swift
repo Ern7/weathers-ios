@@ -10,7 +10,7 @@ import Foundation
 struct ForecastDay : Codable {
 
     let dateText : String
-    let iconName : String
+    let weatherId : Int
     let temperature : Double?
     
 }

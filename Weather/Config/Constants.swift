@@ -31,6 +31,9 @@ struct Constants {
         static let primaryColor = "#5B089C";
         static let invisibleGrey = "#C1D2D8"
         static let pageBackgroundGrey = "#F8F8F8"
+        static let sunnyPageBackgroundGreen = "#47AB2F"
+        static let cloudyPageBackgroundGrey = "#54717A"
+        static let rainyPageBackgroundGrey = "#57575D"
     }
     
     struct UserDefaultsKeys {
@@ -38,7 +41,13 @@ struct Constants {
     }
     
     struct CellIdentifiers {
-        static let dayTableViewCell = "DayTableViewCell";
+        static let dayTableViewCell = "dayTableViewCell";
+    }
+    
+    struct CurrentWeatherBackgroundImageNames {
+        static let forestSunny = "forest_sunny";
+        static let forestRainy = "forest_rainy"
+        static let forestCloudy = "forest_cloudy"
     }
     
 }

@@ -45,36 +45,56 @@ extension CurrentWeatherViewModel {
     
     var currentTemperature: String {
         if let _temperature = self.currentWeather!.main.temp {
+            let temp = Int(round(_temperature))
             let savedUserMeasurementUnit = measurementUnitSettingsUseCase.get()
             let unit = measurementUnitDisplayUseCase.getTemperatureUnitDisplayText(measurementUnit: savedUserMeasurementUnit)
-            return "\(_temperature)\(unit))"
+            return "\(temp)\(unit)"
         }
         return "N/A"
     }
     
     var minimumTemperature: String {
         if let _temperature = self.currentWeather!.main.tempMin {
+            let temp = Int(round(_temperature))
             let savedUserMeasurementUnit = measurementUnitSettingsUseCase.get()
             let unit = measurementUnitDisplayUseCase.getTemperatureUnitDisplayText(measurementUnit: savedUserMeasurementUnit)
-            return "\(_temperature)\(unit))"
+            return "\(temp)\(unit)"
         }
         return "N/A"
     }
     
     var maxTemperature: String {
         if let _temperature = self.currentWeather!.main.tempMax {
+            let temp = Int(round(_temperature))
             let savedUserMeasurementUnit = measurementUnitSettingsUseCase.get()
             let unit = measurementUnitDisplayUseCase.getTemperatureUnitDisplayText(measurementUnit: savedUserMeasurementUnit)
-            return "\(_temperature)\(unit))"
+            return "\(temp)\(unit)"
         }
         return "N/A"
     }
     
     var title: String {
         if self.currentWeather!.weather.count > 0 {
-            return self.currentWeather!.weather[0].main
+            return self.currentWeather!.weather[0].main.uppercased()
         }
         return ""
     }
     
+    var pageBackgroundColor: String {
+        if self.currentWeather!.weather.count > 0 {
+            return currentWeatherUseCase.getPageBackgroundColorHex(weatherId: self.currentWeather!.weather[0].id)
+        }
+        return Constants.AppPalette.sunnyPageBackgroundGreen
+    }
+    
+    var pageBackgroundImageName: String {
+        if self.currentWeather!.weather.count > 0 {
+            return currentWeatherUseCase.getHeaderBackgroundImageName(weatherId: self.currentWeather!.weather[0].id)
+        }
+        return Constants.CurrentWeatherBackgroundImageNames.forestSunny
+    }
+    
+    func getHeaderHeight(viewWidth: Double) -> Double {
+        return currentWeatherUseCase.getHomeHeaderHeight(viewWidth: viewWidth)
+    }
 }
