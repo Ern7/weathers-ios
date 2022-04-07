@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var headerTitleLabel: UILabel!
     @IBOutlet weak var headerTemperatureLabel: UILabel!
     var errorView: FeedbackErrorView?
+    var permissionsAlert : UIAlertController?
     
     //VIEW MODELS
     var currentWeatherViewModel: CurrentWeatherViewModel?
@@ -38,6 +39,13 @@ class HomeViewController: UIViewController {
         initializeViewModels()
         setupTableViewDelegatesAndDataSource()
         bindViewModels()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !LocationPermissionUtils.hasLocationPermission() {
+            displayUserLocationErrorAlert()
+        }
     }
     
     // MARK: - VIEWMODEL METHODS
@@ -86,7 +94,7 @@ class HomeViewController: UIViewController {
             currentWeatherViewModel?.fetchCurrentWeather(latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude)
         }
         else {
-            displayUserLocationErrorMessage()
+            displayUserLocationErrorAlert()
         }
     }
     
@@ -95,7 +103,7 @@ class HomeViewController: UIViewController {
             forecastDayListViewModel?.fetchForecast(latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude)
         }
         else {
-            displayUserLocationErrorMessage()
+            displayUserLocationErrorAlert()
         }
     }
 
