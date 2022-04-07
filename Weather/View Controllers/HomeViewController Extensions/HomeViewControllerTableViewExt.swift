@@ -13,6 +13,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     func setupTableViewDelegatesAndDataSource(){
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isHidden = true
     }
     
     // MARK: - TableView

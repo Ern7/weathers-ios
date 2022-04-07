@@ -16,7 +16,7 @@ struct Constants {
 
     struct ApiKeys {
         static let OpenWeatherApiKey = "";
-       // static let OpenWeatherApiKey = "0440cca34aacc0141b59a843e812a138";
+        //  static let OpenWeatherApiKey = "0440cca34aacc0141b59a843e812a138";
     }
     
     struct Font {
@@ -28,7 +28,7 @@ struct Constants {
     }
     
     struct AppPalette {
-        static let primaryColor = "#5B089C";
+        static let primaryColor = "#54717A";
         static let invisibleGrey = "#C1D2D8"
         static let pageBackgroundGrey = "#F8F8F8"
         static let sunnyPageBackgroundGreen = "#47AB2F"

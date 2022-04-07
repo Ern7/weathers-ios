@@ -207,9 +207,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fbC-wl-Abq">
-                                <rect key="frame" x="188" y="429" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fbC-wl-Abq">
+                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
                                 <color key="color" red="0.32941176470588235" green="0.44313725490196076" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
@@ -218,7 +217,9 @@
                         <constraints>
                             <constraint firstItem="bDQ-RC-Ve2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-50" id="02i-5T-d23"/>
                             <constraint firstItem="bDQ-RC-Ve2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Or-UZ-n0t"/>
+                            <constraint firstItem="fbC-wl-Abq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="11y-Yz-wny"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bDQ-RC-Ve2" secondAttribute="trailing" id="JBf-uO-0ae"/>
+                            <constraint firstItem="fbC-wl-Abq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T9v-ey-WHY"/>
                             <constraint firstAttribute="bottom" secondItem="bDQ-RC-Ve2" secondAttribute="bottom" id="wjZ-ZM-wF6"/>
                         </constraints>
                     </view>

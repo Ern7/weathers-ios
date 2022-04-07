@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeViewController: UIViewController {
     
@@ -20,18 +21,23 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerTitleLabel: UILabel!
     @IBOutlet weak var headerTemperatureLabel: UILabel!
+    var errorView: FeedbackErrorView?
     
     //VIEW MODELS
     var currentWeatherViewModel: CurrentWeatherViewModel?
     var forecastDayListViewModel: ForecastDayListViewModel?
     
+    //USER LOCATION
+    var manager = CLLocationManager()
+    var currentLocation : CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocationManager()
+        setupErrorView()
         initializeViewModels()
         setupTableViewDelegatesAndDataSource()
         bindViewModels()
-        fetchCurrentWeather()
     }
     
     // MARK: - VIEWMODEL METHODS
@@ -55,7 +61,7 @@ class HomeViewController: UIViewController {
             self?.showLoader()
         }
         currentWeatherViewModel!.needsToShowError = { [weak self] error in
-            DebuggingLogger.printData("HomeViewController fetchCurrentWeather error: \(error.message)")
+            self?.showErrorView(title: "Error", description: error.message)
         }
     }
     
@@ -64,28 +70,39 @@ class HomeViewController: UIViewController {
             self?.tableView.reloadData()
             self?.showTableView()
             self?.hideLoader()
+            self?.hideErrorView()
         }
         forecastDayListViewModel!.needsToShowLoading = { [weak self] in
             self?.showLoader()
         }
         forecastDayListViewModel!.needsToShowError = { [weak self] error in
-            DebuggingLogger.printData("HomeViewController fetchForecast error: \(error.message)")
+            self?.showErrorView(title: "Error", description: error.message)
         }
     }
     
     //MARK: DATA FETCH METHODS
-    private func fetchCurrentWeather(){
-        currentWeatherViewModel?.fetchCurrentWeather(latitude: -25.9992, longitude: 28.0889)
+    func fetchCurrentWeather(){
+        if currentLocation != nil {
+            currentWeatherViewModel?.fetchCurrentWeather(latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude)
+        }
+        else {
+            displayUserLocationErrorMessage()
+        }
     }
     
     private func fetchForecast(){
-        forecastDayListViewModel?.fetchForecast(latitude: -25.9992, longitude: 28.1263)
+        if currentLocation != nil {
+            forecastDayListViewModel?.fetchForecast(latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude)
+        }
+        else {
+            displayUserLocationErrorMessage()
+        }
     }
 
     //MARK: - Activity Indicator methods
     func showLoader() {
         DispatchQueue.main.async {
-          //  self.errorView.isHidden = true
+            self.hideErrorView()
             self.activityIndicatorView.isHidden = false
             self.activityIndicatorView.startAnimating()
             self.hideTableView()
@@ -99,5 +116,4 @@ class HomeViewController: UIViewController {
         }
     }
     
-
 }

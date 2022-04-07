@@ -61,6 +61,11 @@
 		0F2A704727FC852A00887966 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A704227FC851800887966 /* Montserrat-SemiBold.ttf */; };
 		0F2A704A27FC858400887966 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A704927FC858400887966 /* HomeViewController.swift */; };
 		0F2A704C27FCA4DC00887966 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A704B27FCA4DC00887966 /* BaseViewModel.swift */; };
+		0F70C75327FECDCD003F1907 /* HomeViewControllerUserLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70C75227FECDCD003F1907 /* HomeViewControllerUserLocationExt.swift */; };
+		0F70C75527FED16F003F1907 /* LocationPermissionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70C75427FED16F003F1907 /* LocationPermissionUtils.swift */; };
+		0F70C75927FED7E8003F1907 /* FeedbackErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F70C75827FED7E8003F1907 /* FeedbackErrorView.xib */; };
+		0F70C75B27FEDA70003F1907 /* FeedbackErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70C75A27FEDA70003F1907 /* FeedbackErrorView.swift */; };
+		0F70C75D27FEDC81003F1907 /* HomeViewControllerErrorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70C75C27FEDC81003F1907 /* HomeViewControllerErrorExt.swift */; };
 		0FB2682427FD70BB00C734BB /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2682327FD70BB00C734BB /* DayTableViewCell.swift */; };
 		0FB2682727FD73E800C734BB /* HomeViewControllerTableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2682627FD73E800C734BB /* HomeViewControllerTableViewExt.swift */; };
 /* End PBXBuildFile section */
@@ -141,6 +146,11 @@
 		0F2A704227FC851800887966 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		0F2A704927FC858400887966 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0F2A704B27FCA4DC00887966 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		0F70C75227FECDCD003F1907 /* HomeViewControllerUserLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUserLocationExt.swift; sourceTree = "<group>"; };
+		0F70C75427FED16F003F1907 /* LocationPermissionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionUtils.swift; sourceTree = "<group>"; };
+		0F70C75827FED7E8003F1907 /* FeedbackErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackErrorView.xib; sourceTree = "<group>"; };
+		0F70C75A27FEDA70003F1907 /* FeedbackErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackErrorView.swift; sourceTree = "<group>"; };
+		0F70C75C27FEDC81003F1907 /* HomeViewControllerErrorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerErrorExt.swift; sourceTree = "<group>"; };
 		0FB2682327FD70BB00C734BB /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		0FB2682627FD73E800C734BB /* HomeViewControllerTableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTableViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,10 +212,9 @@
 				0F2A6FEF27FC377B00887966 /* Services */,
 				0F2A6FEA27FC368D00887966 /* Config */,
 				0F2A6FE527FC35A500887966 /* Utils */,
+				0F70C75627FED760003F1907 /* Layout */,
 				0F2A6FB227FC2D4F00887966 /* AppDelegate.swift */,
 				0F2A6FB427FC2D4F00887966 /* SceneDelegate.swift */,
-				0F2A6FB827FC2D4F00887966 /* Main.storyboard */,
-				0F2A6FC027FC2D5000887966 /* LaunchScreen.storyboard */,
 				0F2A6FC327FC2D5000887966 /* Info.plist */,
 				0F2A6FBB27FC2D4F00887966 /* Weather.xcdatamodeld */,
 			);
@@ -235,6 +244,7 @@
 				0F2A6FE627FC365200887966 /* DeviceNetworkMonitor.swift */,
 				0F2A6FE827FC366F00887966 /* DebuggingLogger.swift */,
 				0F2A6FED27FC370700887966 /* ColorUtils.swift */,
+				0F70C75427FED16F003F1907 /* LocationPermissionUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -380,6 +390,25 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		0F70C75627FED760003F1907 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				0F70C75727FED7B4003F1907 /* Feedback Xibs */,
+				0F2A6FB827FC2D4F00887966 /* Main.storyboard */,
+				0F2A6FC027FC2D5000887966 /* LaunchScreen.storyboard */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		0F70C75727FED7B4003F1907 /* Feedback Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				0F70C75827FED7E8003F1907 /* FeedbackErrorView.xib */,
+				0F70C75A27FEDA70003F1907 /* FeedbackErrorView.swift */,
+			);
+			path = "Feedback Xibs";
+			sourceTree = "<group>";
+		};
 		0FB2682227FD70A500C734BB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +421,8 @@
 			isa = PBXGroup;
 			children = (
 				0FB2682627FD73E800C734BB /* HomeViewControllerTableViewExt.swift */,
+				0F70C75227FECDCD003F1907 /* HomeViewControllerUserLocationExt.swift */,
+				0F70C75C27FEDC81003F1907 /* HomeViewControllerErrorExt.swift */,
 			);
 			path = "HomeViewController Extensions";
 			sourceTree = "<group>";
@@ -503,6 +534,7 @@
 				0F2A704527FC852A00887966 /* Montserrat-Regular.ttf in Resources */,
 				0F2A704427FC852A00887966 /* Montserrat-Thin.ttf in Resources */,
 				0F2A704327FC852500887966 /* Montserrat-Bold.ttf in Resources */,
+				0F70C75927FED7E8003F1907 /* FeedbackErrorView.xib in Resources */,
 				0F2A704627FC852A00887966 /* Montserrat-Medium.ttf in Resources */,
 				0F2A6FC227FC2D5000887966 /* LaunchScreen.storyboard in Resources */,
 				0F2A6FBF27FC2D5000887966 /* Assets.xcassets in Resources */,
@@ -544,6 +576,7 @@
 				0F2A700027FC398700887966 /* CurrentWeatherUseCase.swift in Sources */,
 				0F2A6FF127FC379300887966 /* OpenWeatherApiService.swift in Sources */,
 				0F2A702D27FC61FE00887966 /* MeasurementUnitDisplayUseCaseImp.swift in Sources */,
+				0F70C75527FED16F003F1907 /* LocationPermissionUtils.swift in Sources */,
 				0F2A703727FC785900887966 /* ForecastDay.swift in Sources */,
 				0F2A701627FC410B00887966 /* City.swift in Sources */,
 				0F2A6FE927FC366F00887966 /* DebuggingLogger.swift in Sources */,
@@ -560,6 +593,7 @@
 				0F2A702427FC4E8700887966 /* MeasurementUnit.swift in Sources */,
 				0F2A702227FC4D7700887966 /* CurrentWeatherViewModel.swift in Sources */,
 				0F2A700A27FC3BB900887966 /* Clouds.swift in Sources */,
+				0F70C75B27FEDA70003F1907 /* FeedbackErrorView.swift in Sources */,
 				0F2A701227FC40BF00887966 /* TimeStampData.swift in Sources */,
 				0F2A701427FC40DB00887966 /* Rain.swift in Sources */,
 				0F2A6FF427FC37C400887966 /* WebResource.swift in Sources */,
@@ -577,6 +611,8 @@
 				0F2A6FB327FC2D4F00887966 /* AppDelegate.swift in Sources */,
 				0F2A6FB527FC2D4F00887966 /* SceneDelegate.swift in Sources */,
 				0F2A703527FC769000887966 /* TimeStampDataListViewModel.swift in Sources */,
+				0F70C75327FECDCD003F1907 /* HomeViewControllerUserLocationExt.swift in Sources */,
+				0F70C75D27FEDC81003F1907 /* HomeViewControllerErrorExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,21 +794,29 @@
 				DEVELOPMENT_TEAM = 2PZ4C72D4M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyWeather;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Weather needs your location to fetch weather information in your current location.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Weather needs your location to fetch weather information in your current location.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Weather needs your location to fetch weather information in your current location.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Weather needs your location to fetch weather information in your current location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Weather needs your location to fetch weather information in your current location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kardia.co.za.weather.Weather;
+				PRODUCT_BUNDLE_IDENTIFIER = kardiak.co.za.weather.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -786,21 +830,29 @@
 				DEVELOPMENT_TEAM = 2PZ4C72D4M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyWeather;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Weather needs your location to fetch weather information in your current location.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Weather needs your location to fetch weather information in your current location.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Weather needs your location to fetch weather information in your current location.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Weather needs your location to fetch weather information in your current location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Weather needs your location to fetch weather information in your current location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kardia.co.za.weather.Weather;
+				PRODUCT_BUNDLE_IDENTIFIER = kardiak.co.za.weather.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
