@@ -39,12 +39,26 @@ class HomeViewController: UIViewController {
         initializeViewModels()
         setupTableViewDelegatesAndDataSource()
         bindViewModels()
+        
+        
+        // add notification observers
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.checkPermissionsAndperformAppropriateAction()
+    }
+    
+    func checkPermissionsAndperformAppropriateAction(){
         if !LocationPermissionUtils.hasLocationPermission() {
             displayUserLocationErrorAlert()
+        }
+        else {
+            if (currentLocation != nil){
+                self.fetchCurrentWeather()
+            }
         }
     }
     
@@ -122,6 +136,16 @@ class HomeViewController: UIViewController {
             self.activityIndicatorView.isHidden = true
             self.activityIndicatorView.stopAnimating()
         }
+    }
+    
+    // MARK: - Notification observers methods
+
+    @objc func didBecomeActive() {
+        DebuggingLogger.printData("didBecomeActive")
+    }
+
+    @objc func willEnterForeground() {
+        DebuggingLogger.printData("willEnterForeground")
     }
     
 }
