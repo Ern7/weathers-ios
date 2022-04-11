@@ -40,7 +40,9 @@ extension HomeViewController : CLLocationManagerDelegate {
                  }
                  else{
                      if let placemark = placemarks?[0]{
-                         DebuggingLogger.printData("CLGeocoder().reverseGeocodeLocation Place name: \(placemark.subLocality!), \(placemark.locality!)")
+                         if let sublocality = placemark.subLocality, let locality = placemark.locality {
+                             DebuggingLogger.printData("CLGeocoder().reverseGeocodeLocation Place name: \(sublocality), \(locality)")
+                         }
                      }
                  }
              }

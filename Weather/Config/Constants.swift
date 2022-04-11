@@ -19,7 +19,7 @@ struct Constants {
         //.. but ideally these keys should not be in the code for obvious security reasons.
         static let OpenWeatherApiKey = "";
         static let AppCenterAppSecret = ""
-      //  static let OpenWeatherApiKey = "0440cca34aacc0141b59a843e812a138";
+       // static let OpenWeatherApiKey = "0440cca34aacc0141b59a843e812a138";
       //  static let AppCenterAppSecret = "371e65da-6d34-471b-84cb-32b8adad9eef"
     }
     
