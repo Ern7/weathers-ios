@@ -6,7 +6,6 @@ target 'Weather' do
   use_frameworks!
 
   # Pods for Weather
-pod 'AppCenter'
 
 
   target 'WeatherTests' do

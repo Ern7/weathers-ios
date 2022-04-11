@@ -7,9 +7,6 @@
 
 import UIKit
 import CoreData
-import AppCenter
-import AppCenterAnalytics
-import AppCenterCrashes
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,10 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         DeviceNetworkMonitor.shared.startMonitoring()
-        AppCenter.start(withAppSecret: Constants.ApiKeys.AppCenterAppSecret, services:[
-          Analytics.self,
-          Crashes.self
-        ])
         return true
     }
 
